@@ -14,8 +14,8 @@ export default function PhotoUpload({ onImageSelect }) {
       alert('Formats acceptés: JPG, PNG, WEBP')
       return
     }
-    if (file.size > 5 * 1024 * 1024) {
-      alert('La taille maximale est 5MB')
+    if (file.size > 25 * 1024 * 1024) {
+      alert('La taille maximale est 25 Mo')
       return
     }
 
@@ -39,6 +39,7 @@ export default function PhotoUpload({ onImageSelect }) {
           <Upload className="mb-3 h-8 w-8 text-indigo-600" />
           <p className="font-medium text-gray-900">Glissez-déposez votre photo</p>
           <p className="mt-1 text-sm text-gray-500">ou cliquez pour sélectionner un fichier</p>
+          <p className="mt-2 text-xs text-gray-400">JPEG, PNG, WEBP — jusqu'à 25 Mo</p>
           <input
             ref={inputRef}
             type="file"
